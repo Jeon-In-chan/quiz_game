@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [QuizController::class, 'getHomepage'])->name('quiz.homepage');
+Route::get('/quizpage', [QuizController::class, 'getQuizpage'])->name('quiz.quizpage');
